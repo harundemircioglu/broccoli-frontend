@@ -1,5 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+
+//COMPONENTS
+
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './admin/dashboard/dashboard.component';
@@ -14,6 +17,7 @@ import { EditPostComponent } from './admin/dashboard/edit-post/edit-post.compone
 import { EditRecommendedPostComponent } from './admin/dashboard/edit-recommended-post/edit-recommended-post.component';
 import { EditSuggestionComponent } from './admin/dashboard/edit-suggestion/edit-suggestion.component';
 import { EditUserComponent } from './admin/dashboard/edit-user/edit-user.component';
+import { PostComponent } from './post/post.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -21,6 +25,8 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   //Kullanıcının profil sayfası
   { path: 'profile', component: ProfileComponent },
+  //Kullanıcının post ekleme sayfasu
+  { path: 'new-post', component: PostComponent },
   //Kullanıcının post oluşturma sayfası
   { path: 'profile/my-posts', component: UserPostComponent },
   //Kullanıcının favori postlarının sayfası
@@ -36,6 +42,8 @@ const routes: Routes = [
 
   //Admin home sayfası
   { path: 'admin/dashboard', component: DashboardComponent },
+  //Admin kullanıcı düzenleme sayfası
+  { path: 'admin/edit-user', component: EditUserComponent },
   //Admin kategori düzenleme sayfası
   { path: 'admin/edit-category', component: EditCategoryComponent },
   //Admin post düzenleme sayfası
@@ -44,8 +52,6 @@ const routes: Routes = [
   { path: 'admin/edit-recommended-post', component: EditRecommendedPostComponent },
   //Admin öneri düzenleme sayfası
   { path: 'admin/edit-suggestion', component: EditSuggestionComponent },
-  //Admin kullanıcı düzenleme sayfası
-  { path: 'admin/edit-user', component: EditUserComponent },
 
 ];
 
