@@ -1,7 +1,6 @@
 export interface RegisterRequest {
-  tc_no: string;
-  UserName: string;
-  Email: string;
+  name: string;
+  email: string;
   phone: string;
-  Password: string;
+  password: string;
 }

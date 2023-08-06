@@ -1,0 +1,25 @@
+<div class="login-area">
+  <div class="container" id="container">
+    <div class="form-container sign-up-container">
+      <!-- YENİ ÜYELİK -->
+      <form action="#">
+        <h1 class="mb-2">Create Account</h1>
+        <input type="text" [(ngModel)]="registerRequest.name" [ngModelOptions]="{standalone: true}" placeholder="Name" />
+        <input type="email" [(ngModel)]="registerRequest.email" [ngModelOptions]="{standalone: true}" placeholder="Email" />
+        <input type="text" [(ngModel)]="registerRequest.phone" [ngModelOptions]="{standalone: true}" placeholder="Phone" />
+        <input type="password" [(ngModel)]="registerRequest.password" [ngModelOptions]="{standalone: true}" placeholder="Password" />
+        <button class="mt-2" (click)="register()">Sign Up</button>
+      </form>
+    </div>
+    <!-- LOGIN - REGISTER SELECET SECTION -->
+    <div class="overlay-container">
+      <div class="overlay">
+        <div class="overlay-panel overlay-left">
+          <h1>Welcome Back!</h1>
+          <p>To keep connected with us please login with your personal info</p>
+          <button class="ghost" (click)="login()">login</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

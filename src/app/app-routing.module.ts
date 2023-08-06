@@ -5,6 +5,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
 import { DashboardComponent } from './admin/dashboard/dashboard.component';
 import { ProfileComponent } from './profile/profile.component';
 import { UserPostComponent } from './profile/user-post/user-post.component';
@@ -23,6 +24,8 @@ const routes: Routes = [
   { path: '', component: HomeComponent },
   //Kullanıcının login sayfasu
   { path: 'login', component: LoginComponent },
+  //Kullanıcının login sayfasu
+  { path: 'register', component: RegisterComponent },
   //Kullanıcının profil sayfası
   { path: 'profile', component: ProfileComponent },
   //Kullanıcının post ekleme sayfasu

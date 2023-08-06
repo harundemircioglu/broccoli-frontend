@@ -24,6 +24,7 @@ import { EditSuggestionComponent } from './admin/dashboard/edit-suggestion/edit-
 import { EditUserComponent } from './admin/dashboard/edit-user/edit-user.component';
 import { WeightTrackingComponent } from './profile/weight-tracking/weight-tracking.component';
 import { EditCategoryComponent } from './admin/dashboard/edit-category/edit-category.component';
+import { RegisterComponent } from './register/register.component';
 
 
 @NgModule({
@@ -44,7 +45,8 @@ import { EditCategoryComponent } from './admin/dashboard/edit-category/edit-cate
     EditSuggestionComponent,
     EditUserComponent,
     WeightTrackingComponent,
-    EditCategoryComponent
+    EditCategoryComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
