@@ -7,6 +7,6 @@ export class User {
 }
 
 export enum UserType {
-  Admin,
   User,
+  Admin,
 }

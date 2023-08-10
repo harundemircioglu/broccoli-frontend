@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { LoginRequest } from 'src/core/models/request/login-request.model';
-import { RegisterRequest } from 'src/core/models/request/register-request.model';
 import { AuthService } from 'src/core/services/auth/auth.service';
 import { ResponseStatus } from 'src/core/models/response/base-response.model';
 import { User } from 'src/core/models/user.model';
@@ -29,7 +28,7 @@ export class LoginComponent implements OnInit {
       //kullanıcı tipine göre rota işlemleri
       this.authService.currentUser.subscribe(user => {
         this.currentUser = user;
-        if (this.currentUser?.userType === 0) {
+        if (this.currentUser?.userType === 1) {
           this.router.navigate(['admin/dashboard']);
         }
         else {

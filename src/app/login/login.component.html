@@ -6,9 +6,11 @@
         <!-- Login Form -->
         <form>
           <h2 class="mt-2">Welcome</h2>
-          <input type="text" class="inputTxt mt-3" placeholder="Email">
-          <input type="password" class="inputTxt mt-3" placeholder="Password">
-          <button class="mt-3 mb-3">LOGIN</button>
+          <input [(ngModel)]="loginRequest.email" [ngModelOptions]="{standalone: true}" type="text"
+            class="inputTxt mt-3" placeholder="Email">
+          <input [(ngModel)]="loginRequest.password" [ngModelOptions]="{standalone: true}" type="password"
+            class="inputTxt mt-3" placeholder="Password">
+          <button class="mt-3 mb-3" (click)="login()">LOGIN</button>
         </form>
       </div>
     </div>
