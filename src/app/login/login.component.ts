@@ -15,8 +15,6 @@ export class LoginComponent implements OnInit {
 
   loginRequest: LoginRequest = <LoginRequest>{};
 
-  registerRequest: RegisterRequest = <RegisterRequest>{};
-
   currentUser: User | null = null;
 
   constructor(
