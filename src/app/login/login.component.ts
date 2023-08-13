@@ -22,6 +22,8 @@ export class LoginComponent implements OnInit {
   ) { }
 
   async login() {
+    this.loginRequest.email = "harunuser@gmail.com";
+    this.loginRequest.password = "harunuser123";
     const status = await this.authService.login(this.loginRequest);
     if (status == ResponseStatus.Ok) {
 

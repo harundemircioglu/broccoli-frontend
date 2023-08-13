@@ -1,0 +1,21 @@
+@font-face {
+  font-family: 'myFont';
+  src: url(../../assets/fonts/American_Legend.otf);
+}
+
+.new-post-area {
+  width: 100%;
+  height: auto;
+
+  .new-post {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+
+    h1 {
+      font-family: 'myFont';
+      color: #75a032;
+    }
+  }
+}

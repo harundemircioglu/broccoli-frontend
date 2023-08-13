@@ -18,7 +18,7 @@ import { EditPostComponent } from './admin/dashboard/edit-post/edit-post.compone
 import { EditRecommendedPostComponent } from './admin/dashboard/edit-recommended-post/edit-recommended-post.component';
 import { EditSuggestionComponent } from './admin/dashboard/edit-suggestion/edit-suggestion.component';
 import { EditUserComponent } from './admin/dashboard/edit-user/edit-user.component';
-import { PostComponent } from './post/post.component';
+import { NewPostComponent } from './new-post/new-post.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -28,18 +28,20 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   //Kullanıcının profil sayfası
   { path: 'profile', component: ProfileComponent },
-  //Kullanıcının post ekleme sayfasu
-  { path: 'new-post', component: PostComponent },
   //Kullanıcının post oluşturma sayfası
-  { path: 'profile/my-posts', component: UserPostComponent },
-  //Kullanıcının favori postlarının sayfası
-  { path: 'profile/my-favorite-post', component: FavoritePostComponent },
-  //Kullanıcının kilo takip sayfası
-  { path: 'profile/my-weight-tracking', component: WeightTrackingComponent },
-  //Kullanıcının favori öneri sayfası
-  { path: 'profile/my-favorite-suggestion', component: FavoriteSuggestionComponent },
+  { path: 'new-post', component: NewPostComponent },
+  //Kullanıcının post detay sayfası
+  { path: 'post-details', component: UserPostComponent },
+  //Kullanıcının post sayfası
+  { path: 'profile/my-posts/:userId', component: UserPostComponent },
   //Kullanıcının favori önerilenler sayfası
-  { path: 'profile/my-favorite-recommended-post', component: FavoriteRecommendedPostComponent },
+  { path: 'profile/my-favorite-recommended-posts/:userId', component: FavoriteRecommendedPostComponent },
+  //Kullanıcının favori post sayfası
+  { path: 'profile/my-favorite-posts/:userId', component: FavoritePostComponent },
+  //Kullanıcının favori öneri sayfası
+  { path: 'profile/my-favorite-suggestions/:userId', component: FavoriteSuggestionComponent },
+  //Kullanıcının kilo takip sayfası
+  { path: 'profile/my-weight-trackings/:userId', component: WeightTrackingComponent },
 
   //ADMIN SECTION
 

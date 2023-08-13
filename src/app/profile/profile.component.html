@@ -1,1 +1,37 @@
-<p>profile works!</p>
+<app-navbar></app-navbar>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="edit-profile-area">
+        <!-- Edit Profile Form -->
+        <form class="mt-5" *ngIf="currentUser">
+          <h2>Profile</h2>
+          <input type="text" class="inputText mt-3" [ngModelOptions]="{standalone: true}"
+            [(ngModel)]="currentUser.name">
+          <input type="text" class="inputText mt-3" [ngModelOptions]="{standalone: true}"
+            [(ngModel)]="currentUser.email">
+          <input type="text" class="inputText mt-3" [ngModelOptions]="{standalone: true}"
+            [(ngModel)]="currentUser.phone">
+          <button class="mt-3 mb-3">Save</button>
+        </form>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="others-area">
+        <div class="others mt-5" *ngIf="currentUser">
+          <h2>Others</h2>
+          <a [routerLink]="['/profile/my-posts', currentUser.id ]" class="mt-3">My Posts</a>
+          <a [routerLink]="['/profile/my-weight-trackings',currentUser.id]" class="mt-3">My Weight Trackings</a>
+          <a [routerLink]="['/profile/my-favorite-posts',currentUser.id]" class="mt-3">My Favorite Posts</a>
+          <a [routerLink]="['/profile/my-favorite-recommended-posts',currentUser.id]" class="mt-3">My Favorite
+            Recommended Posts</a>
+          <a [routerLink]="['/profile/my-favorite-suggestions',currentUser.id]" class="mt-3 mb-3">My Favorite
+            Suggestions</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-footbar></app-footbar>

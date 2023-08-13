@@ -1,0 +1,80 @@
+@font-face {
+  font-family: 'CustomFont';
+  src: url(../../assets/fonts/American_Legend.otf);
+}
+
+.navbar-area {
+  width: 100%;
+  height: auto;
+  // background-color: rgba(141, 198, 63, .2);
+  padding: 10px;
+}
+
+.nav-container {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .section {
+    width: 100%;
+    height: 100%;
+  }
+
+  .left {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    a {
+      width: 30px;
+      height: 30px;
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+
+  .center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    a {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-decoration: none;
+    }
+
+    img {
+      width: 60px;
+      height: 60px;
+    }
+
+    h3 {
+      color: #8DC63F;
+      font-size: 30px;
+      font-family: 'CustomFont';
+    }
+  }
+
+  .right {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    a {
+      font-size: 14px;
+      font-weight: 500;
+      color: #8DC63F;
+      width: 70px;
+      height: auto;
+      text-decoration: none;
+      cursor: pointer;
+    }
+  }
+}

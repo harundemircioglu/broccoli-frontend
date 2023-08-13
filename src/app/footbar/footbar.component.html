@@ -1,0 +1,16 @@
+<div class="footbar-area">
+  <div class="footbar-section">
+    <button (click)="home()">
+      <img src="../../assets/images/home_white.png" alt="">
+    </button>
+    <button (click)="newPost()">
+      <img src="../../assets/images/plus.png" alt="">
+    </button>
+    <button (click)="profile()">
+      <img src="../../assets/images/user.png" alt="">
+    </button>
+    <button *ngIf="IsLoggedIn" (click)="logout()">
+      <img src="../../assets/images/logout.png" alt="">
+    </button>
+  </div>
+</div>

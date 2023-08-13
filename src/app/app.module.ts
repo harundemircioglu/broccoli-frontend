@@ -25,6 +25,14 @@ import { EditUserComponent } from './admin/dashboard/edit-user/edit-user.compone
 import { WeightTrackingComponent } from './profile/weight-tracking/weight-tracking.component';
 import { EditCategoryComponent } from './admin/dashboard/edit-category/edit-category.component';
 import { RegisterComponent } from './register/register.component';
+import { FootbarComponent } from './footbar/footbar.component';
+
+//MODULS
+
+import { DropdownModule } from 'primeng/dropdown';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NewPostComponent } from './new-post/new-post.component';
+import { PostDetailComponent } from './post-detail/post-detail.component';
 
 
 @NgModule({
@@ -46,13 +54,18 @@ import { RegisterComponent } from './register/register.component';
     EditUserComponent,
     WeightTrackingComponent,
     EditCategoryComponent,
-    RegisterComponent
+    RegisterComponent,
+    FootbarComponent,
+    NewPostComponent,
+    PostDetailComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    DropdownModule,
+    BrowserAnimationsModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
