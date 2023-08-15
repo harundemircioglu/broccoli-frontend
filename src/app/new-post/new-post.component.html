@@ -1,9 +1,57 @@
 <app-navbar></app-navbar>
 
+<p-toast></p-toast>
 <div class="new-post-area">
   <div class="container">
     <div class="new-post">
       <h1>New post</h1>
+      <div class="row">
+        <div class="col-md-2" *ngFor="let category of categories">
+          <div class="category mt-4">
+            <input type="radio" name="category" class="radio">
+            <label (click)="selectedCategoryBtn(category.id)" [class.selected]="category.id === selectedCategory?.id"
+              class="category-label">{{category.category_name}}</label>
+          </div>
+        </div>
+      </div>
+      <div class="row mt-4">
+        <div class="col-md-12">
+          <div class="header-section">
+            <input type="text" placeholder="Post header" [(ngModel)]="postRequest.post_header">
+          </div>
+        </div>
+      </div>
+      <div class="row mt-4">
+        <div class="col-md-12">
+          <div class="detail-section">
+            <textarea placeholder="Post detail" [(ngModel)]="postRequest.post_detail"></textarea>
+          </div>
+        </div>
+      </div>
+      <!-- LIVE PREVIEW EKLENECEK -->
+      <div class="row mt-4 mb-5">
+        <div class="col-md-12 mb-5">
+          <div class="share-section mb-5">
+            <button (click)="onCreate(postRequest)">Share</button>
+          </div>
+        </div>
+      </div>
+      <!-- <div class="row mt-4 mb-5">
+        <div class="col-md-12 mb-5">
+          <div class="preview-section mb-5">
+            <button (click)="previewPostBtn()">Preview</button>
+          </div>
+        </div>
+      </div> -->
     </div>
   </div>
 </div>
+
+<!-- <div class="preview-post-area" *ngIf="previewPost">
+  <div class="container">
+    <div class="preview-post-container">
+    </div>
+  </div>
+</div> -->
+
+<app-footbar></app-footbar>

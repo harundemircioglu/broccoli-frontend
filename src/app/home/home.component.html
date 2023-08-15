@@ -1,3 +1,30 @@
 <app-navbar></app-navbar>
+<p-toast></p-toast>
+<div class="container">
+  <div class="col-md-12">
+    <div class="post mt-5 mb-5" *ngFor="let post of posts">
+      <div class="post-background">
+        <img src="../../assets/images/broccoli.png">
+      </div>
+      <div class="posted-user mt-2">
+        <h6><span>posted by</span> {{post.user.name}}</h6>
+
+        <!-- CATEGORY DETAIL -->
+        <a routerLink="/">{{post.category.category_name}}</a>
+
+
+      </div>
+      <div class="post-header mt-2">
+        <h2>{{post.post_header}}</h2>
+      </div>
+      <div class="post-detail mt-2">
+        <h5>{{post.post_detail}}</h5>
+      </div>
+      <div class="favorite mt-2 mb-3" *ngIf="currentUser">
+        <button (click)="favorite(post.id,FavoritesPostRequest)">Favorite</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 <app-footbar></app-footbar>

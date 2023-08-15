@@ -1,5 +1,5 @@
 <app-navbar></app-navbar>
-
+<p-toast></p-toast>
 <div class="container">
   <div class="row">
     <div class="col-md-6">
@@ -13,7 +13,7 @@
             [(ngModel)]="currentUser.email">
           <input type="text" class="inputText mt-3" [ngModelOptions]="{standalone: true}"
             [(ngModel)]="currentUser.phone">
-          <button class="mt-3 mb-3">Save</button>
+          <button (click)="onUpdate(currentUser.id,currentUser)" class="mt-3 mb-3">Save</button>
         </form>
       </div>
     </div>

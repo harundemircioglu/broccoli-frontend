@@ -27,12 +27,13 @@ import { EditCategoryComponent } from './admin/dashboard/edit-category/edit-cate
 import { RegisterComponent } from './register/register.component';
 import { FootbarComponent } from './footbar/footbar.component';
 
-//MODULS
+//MODULES
 
 import { DropdownModule } from 'primeng/dropdown';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NewPostComponent } from './new-post/new-post.component';
 import { PostDetailComponent } from './post-detail/post-detail.component';
+import { ToastModule } from 'primeng/toast';
 
 
 @NgModule({
@@ -65,7 +66,8 @@ import { PostDetailComponent } from './post-detail/post-detail.component';
     FormsModule,
     HttpClientModule,
     DropdownModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ToastModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
