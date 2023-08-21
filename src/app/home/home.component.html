@@ -7,7 +7,7 @@
         <img src="../../assets/images/broccoli.png">
       </div>
       <div class="posted-user mt-2">
-        <h6><span>posted by</span> {{post.user.name}}</h6>
+        <h6><span>posted by</span><a routerLink="/"> {{post.user.name}}</a></h6>
 
         <!-- CATEGORY DETAIL -->
         <a routerLink="/">{{post.category.category_name}}</a>
@@ -18,10 +18,14 @@
         <h2>{{post.post_header}}</h2>
       </div>
       <div class="post-detail mt-2">
-        <h5>{{post.post_detail}}</h5>
+        <p>{{post.post_detail}}</p>
       </div>
       <div class="favorite mt-2 mb-3" *ngIf="currentUser">
-        <button (click)="favorite(post.id,FavoritesPostRequest)">Favorite</button>
+        <!-- POSTLAR İÇİN LIKE SAYACI EKLENECEK (BACKEND -> ENTITY) -->
+        <button class="like">Like</button>
+        <!-- FAVORITE İŞLEMİNDEN SONRA BUTONDA DEĞİŞİKLİK OLSUN (FAVORİTED) -->
+        <!-- FAVORİLERE EKLENEN POSTLARDA SADECE LIKE BUTONU OLABİLİR -->
+        <button class="fav" (click)="favorite(post.id,FavoritesPostRequest)">Favorite</button>
       </div>
     </div>
   </div>

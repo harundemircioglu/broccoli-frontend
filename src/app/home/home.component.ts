@@ -6,6 +6,7 @@ import { User } from 'src/core/models/user.model';
 import { FavoritesPostRequest } from 'src/core/models/request/favoritesPost-request.model';
 import { ResponseStatus } from 'src/core/models/response/base-response.model';
 import { MessageService } from 'primeng/api';
+import { FavoritesPost } from 'src/core/models/favoritesPost.model';
 
 @Component({
   selector: 'app-home',
@@ -18,6 +19,8 @@ export class HomeComponent implements OnInit {
   currentUser: User | null = null;
 
   posts: Post[] = [];
+
+  favoritesPosts: FavoritesPost[] = [];
 
   selectedPost: Post | undefined;
 
@@ -41,6 +44,7 @@ export class HomeComponent implements OnInit {
       })
     })
   }
+
 
   createEntity<TEntity>(entity: TEntity, entityType: string) {
     return this.apiService.createEntity<TEntity>(entity, entityType);

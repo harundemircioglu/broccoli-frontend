@@ -81,6 +81,11 @@ export class ApiService {
     return this.http.get<BaseDataResponse<TEntity>>(`${environment.api_url}/${entityType.name}/GetById?id=${id}`).pipe(share()).toPromise();
   }
 
+  getEntityByUserId<TEntity>(userId: number, entityType: Type<TEntity>) {
+    return this.http.get<BaseDataResponse<TEntity[]>>(`${environment.api_url}/${entityType.name}/GetByUserId?userId=${userId}`).pipe(share()).toPromise();
+  }
+
+
   //Get by Id kodları
   // getEntityById<TEntity>(id: number, entityType: Type<TEntity>) {
   //   return this.http.get<BaseDataResponse<TEntity[]>>(environment.api_url + "/" + entityType.name + "/GetById?id=" + id).pipe(share()).toPromise();

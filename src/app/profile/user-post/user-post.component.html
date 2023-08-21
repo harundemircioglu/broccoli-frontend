@@ -1,2 +1,32 @@
 <app-navbar></app-navbar>
+<p-toast></p-toast>
+<div class="container">
+  <div class="col-md-12">
+    <div class="header">
+      <h1>Your posts</h1>
+    </div>
+    <div class="post mt-5 mb-5" *ngFor="let post of myPosts">
+      <div class="post-background">
+        <img src="../../assets/images/broccoli.png">
+      </div>
+      <!-- <div class="posted-user mt-2">
+        <h6><span>posted by</span> {{post.user.name}}</h6>
+        CATEGORY DETAIL
+        BACKEND ÜZERİNDEN DEĞİŞİKLİK YAPILACAK
+        <a routerLink="/">{{post.category.category_name}}</a>
+      </div> -->
+      <div class="post-header mt-2">
+        <h2>{{post.post_header}}</h2>
+      </div>
+      <div class="post-detail">
+        <p>{{post.post_detail}}</p>
+      </div>
+      <div class="post-edit mb-2">
+        <button class="edit">Edit</button>
+        <button class="mb-2 delete">Delete</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 <app-footbar></app-footbar>

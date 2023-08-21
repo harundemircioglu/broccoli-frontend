@@ -68,12 +68,14 @@
   .post-detail {
     width: 100%;
     height: auto;
+    padding: 10px;
   }
 
   .favorite {
     width: 100%;
     height: auto;
     padding-left: 10px;
+    display: flex;
 
     button {
       width: 100px;
@@ -92,6 +94,20 @@
     button:hover {
       color: white;
       background-color: #8dc63f;
+    }
+
+    .like{
+      border: 1px solid #3B71CA;
+      color: #3B71CA;
+    }
+
+    .like:hover{
+      background-color: #3B71CA;
+      color: white;
+    }
+
+    .fav{
+      margin-left: 10px !important;
     }
 
   }

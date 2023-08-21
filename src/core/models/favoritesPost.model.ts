@@ -6,5 +6,5 @@ export class FavoritesPost {
   user_id: number = 0;
   post_id: number = 0;
   user: User = new User;
-  category: Post = new Post;
+  post: Post = new Post;
 }
