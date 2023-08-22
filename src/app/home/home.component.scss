@@ -1,3 +1,16 @@
+@font-face {
+  font-family: 'myFont';
+  src: url(../../assets/fonts/American_Legend.otf);
+}
+.header{
+  width: auto;
+  height: auto;
+
+  h1{
+    color: #8dc63f;
+    font-family: 'myFont';
+  }
+}
 .post {
   width: 100%;
   height: auto;

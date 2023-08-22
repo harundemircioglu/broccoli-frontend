@@ -22,8 +22,21 @@
         <p>{{post.post_detail}}</p>
       </div>
       <div class="post-edit mb-2">
-        <button class="edit">Edit</button>
-        <button class="mb-2 delete">Delete</button>
+        <button class="edit" (click)="edit(post.id)">Edit</button>
+        <button class="mb-2 delete" (click)="onDelete(post.id)">Delete</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="edit-post-area" *ngIf="selectedPost">
+  <div class="container">
+    <div class="edit-post">
+      <div class="edit">
+        <input class="mt-4 txt" type="text" [(ngModel)]="selectedPost.post_header">
+        <textarea class="mt-4 txtarea" [(ngModel)]="selectedPost.post_detail"></textarea>
+        <button class="mt-4 save" (click)="onUpdate(selectedPost.id,selectedPost)">Save</button>
+        <button class="mt-4 mb-4 close" (click)="close()">Close</button>
       </div>
     </div>
   </div>

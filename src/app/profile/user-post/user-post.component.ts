@@ -19,6 +19,8 @@ export class UserPostComponent implements OnInit {
 
   myPosts: Post[] = [];
 
+  selectedPost: Post | null = null;
+
   constructor(
     private authService: AuthService,
     private router: Router,
@@ -26,6 +28,46 @@ export class UserPostComponent implements OnInit {
     private confirmationService: ConfirmationService,
     private messageService: MessageService
   ) { }
+
+
+  edit(id: number) {
+    this.apiService.getEntityById<Post>(id, Post).then(response => {
+      if (response?.status == ResponseStatus.Ok) {
+        this.selectedPost = response.data;
+      }
+    })
+  }
+
+  onUpdate(id: number, updatedPost: Post) {
+    this.update(id, updatedPost).then(response => {
+      if (response?.status == ResponseStatus.Ok) {
+        this.messageService.add({ severity: 'success', summary: 'Başarılı', detail: 'Gönderi güncellendi' });
+        this.selectedPost = null;
+        this.refresh();
+      }
+    })
+  }
+
+  update(id: number, updatedPost: Post) {
+    return this.apiService.updateEntity(id, updatedPost, Post);
+  }
+
+  onDelete(id: number) {
+    this.delete(id).then(response => {
+      if (response?.status == ResponseStatus.Ok) {
+        this.messageService.add({ severity: 'success', summary: 'Başarılı', detail: 'Gönderi silindi' });
+        this.refresh();
+      }
+    })
+  }
+
+  delete(id: number) {
+    return this.apiService.deleteEntity(id, Post);
+  }
+
+  close() {
+    this.selectedPost = null;
+  }
 
   refresh() {
     this.authService.currentUser.subscribe(user => {
